@@ -96,9 +96,9 @@ const ProfileView = ({ userData, onBack, role }) => {
 
                     {/* Stats Layout */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
-                        <StatBox icon={Upload} value={userData.stats?.uploads || 0} label="Assets Shared" colorClass="text-cyan-400" />
-                        <StatBox icon={Download} value={userData.stats?.downloads || 0} label="Cloud Downloads" colorClass="text-indigo-400" />
-                        <StatBox icon={Star} value={userData.stats?.avgRating || "0.0"} label="Community Rating" colorClass="text-amber-400" />
+                        <StatBox icon={Upload} value={userData.stats?.uploads || 0} label="contributes" colorClass="text-cyan-400" />
+                        <StatBox icon={Download} value={userData.stats?.downloads || 0} label=" Downloads" colorClass="text-indigo-400" />
+                        <StatBox icon={Star} value={userData.stats?.avgRating || "2.5"} label="Community Rating" colorClass="text-amber-400" />
                     </div>
 
                     {/* Academic Records */}
@@ -109,7 +109,7 @@ const ProfileView = ({ userData, onBack, role }) => {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <DetailRow icon={School} label="Current Department" value={userData.department} />
-                            <DetailRow icon={Layers} label="Academic Session" value={userData.year} />
+                            <DetailRow icon={Layers} label="year" value={userData.year} />
                         </div>
                     </div>
 

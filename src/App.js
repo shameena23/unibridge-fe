@@ -6,21 +6,22 @@ import UploadPage from './pages/Upload';
 import ResourceViewPage from "./pages/ResourceView";
 import ProfilePage from "./pages/ProfilePage";
 import DownloadsPage from "./pages/Downloadspage";
-
+import LandingPage from "./pages/landingpage";
 import MyUploads from "./pages/MyUploadPage";
-
+import AdminDashboard from "./pages/AdminDashboard";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
 
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<Login />} />
 
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/mynewupload" element={<UploadPage />} />
         <Route path="/myuploads" element={< MyUploads/>} />
   
-
+        <Route path="/admindashboard" element={< AdminDashboard/>} />
         <Route path="/resourcereview/:id" element={<ResourceViewPage />} />
 
         <Route path="/profile" element={<ProfilePage onBack={() => window.history.back()} />} />

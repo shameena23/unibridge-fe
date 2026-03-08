@@ -4,6 +4,7 @@ import ProfileView from './ProfileView';
 
 const ProfilePage = ({ onBack }) => {
     const { id: urlId } = useParams();
+    
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true);
     const role = localStorage.getItem("role");

@@ -21,6 +21,7 @@ const UserSidebar = ({ isOpen }) => {
     const fetchUser = async () => {
         try {
             const userId = localStorage.getItem("userId");
+            console.log(userId)
             if (!userId) return;
             const response = await fetch(`http://192.168.1.9:8080/api/profile/${userId}`);
             const data = await response.json();
