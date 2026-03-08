@@ -27,7 +27,7 @@ function MyUpload() {
 
         <div>
 
-            <h2>Upload Resource</h2>
+            <h2>Upload Resources</h2>
 
             <input
                 placeholder="Title"
