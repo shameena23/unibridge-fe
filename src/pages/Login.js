@@ -7,7 +7,7 @@ function Login() {
     const navigate = useNavigate();
     const handleLogin = async () => {
 
-        const res = await fetch("http://localhost:8080/api/login", {
+        const res = await fetch("http://192.168.1.9:8080/api/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

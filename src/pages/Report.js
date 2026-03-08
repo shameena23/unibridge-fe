@@ -31,7 +31,7 @@ const Report = ({ resourceId, resourceTitle, onBack, onSubmit }) => {
         try {
             const userId = localStorage.getItem("userId");
 
-            const response = await fetch("http://localhost:8080/api/report", {
+            const response = await fetch("http://192.168.1.9:8080/api/report", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

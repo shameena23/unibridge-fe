@@ -20,7 +20,7 @@ const ProfilePage = ({ onBack }) => {
             }
 
             try {
-                const BASE_URL = "http://localhost:8080/api";
+                const BASE_URL = "http://192.168.1.9:8080/api";
 
                 // Fire all requests using the activeId
                 const [profileRes, uploadRes, downloadRes] = await Promise.all([

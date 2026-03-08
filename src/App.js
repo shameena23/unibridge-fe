@@ -6,6 +6,9 @@ import UploadPage from './pages/Upload';
 import ResourceViewPage from "./pages/ResourceView";
 import ProfilePage from "./pages/ProfilePage";
 import DownloadsPage from "./pages/Downloadspage";
+
+import MyUploads from "./pages/MyUploadPage";
+
 function App() {
   return (
     <BrowserRouter>
@@ -14,8 +17,10 @@ function App() {
         <Route path="/" element={<Login />} />
 
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/myuploads" element={<MyDownload />} />
-        <Route path="/upload" element={<UploadPage />} />
+        <Route path="/mynewupload" element={<UploadPage />} />
+        <Route path="/myuploads" element={< MyUploads/>} />
+  
+
         <Route path="/resourcereview/:id" element={<ResourceViewPage />} />
 
         <Route path="/profile" element={<ProfilePage onBack={() => window.history.back()} />} />

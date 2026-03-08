@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-function MyUpload() {
+function MyNewUpload() {
 
     const [title, setTitle] = useState("");
 
     const upload = () => {
 
-        fetch("http://localhost:8080/api/resources/upload", {
+        fetch("http://192.168.1.9:8080/api/resources/upload", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -42,4 +42,4 @@ function MyUpload() {
 
 }
 
-export default MyUpload
+export default MyNewUpload

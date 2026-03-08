@@ -9,7 +9,7 @@ const ResourceList = ({ searchQuery = "", filters = { subject: 'All', category: 
   useEffect(() => {
     const fetchResources = async () => {
       try {
-        const res = await fetch("http://localhost:8080/api/resources");
+        const res = await fetch("http://192.168.1.9:8080/api/resources");
         const data = await res.json();
 
         const resourcesWithUser = await Promise.all(
@@ -19,7 +19,7 @@ const ResourceList = ({ searchQuery = "", filters = { subject: 'All', category: 
             }
 
             try {
-              const userRes = await fetch(`http://localhost:8080/api/profile/${resource.uploadedBy}`);
+              const userRes = await fetch(`http://192.168.1.9:8080/api/profile/${resource.uploadedBy}`);
               if (!userRes.ok) throw new Error("User not found");
               const userData = await userRes.json();
               return { ...resource, uploadedByName: userData.name };

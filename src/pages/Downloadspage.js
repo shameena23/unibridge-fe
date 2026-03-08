@@ -40,11 +40,11 @@ export default function DownloadsPage() {
                 setLoading(true);
 
                 // 1. Get the total count for the stat card
-                const countRes = await fetch(`http://localhost:8080/api/download/count/${userId}`);
+                const countRes = await fetch(`http://192.168.1.9:8080/api/download/count/${userId}`);
                 const countData = await countRes.json();
                 setTotalCount(countData);
 
-                const idRes = await fetch(`http://localhost:8080/api/download/user/${userId}`);
+                const idRes = await fetch(`http://192.168.1.9:8080/api/download/user/${userId}`);
                 const downloadRecords = await idRes.json();
 
                 // 3. Fetch details using the correct lowercase key from your log
@@ -58,14 +58,14 @@ export default function DownloadsPage() {
                     }
 
                     try {
-                        const detailRes = await fetch(`http://localhost:8080/api/resources/resourcedetails/${actualId}`);
+                        const detailRes = await fetch(`http://192.168.1.9:8080/api/resources/resourcedetails/${actualId}`);
                         if (!detailRes.ok) return null;
 
                         const resourceData = await detailRes.json();
 
                         // 4. Fetch uploader's name using the 'uploadedBy' field from the resource
                         if (resourceData.uploadedBy) {
-                            const userRes = await fetch(`http://localhost:8080/api/profile/${resourceData.uploadedBy}`);
+                            const userRes = await fetch(`http://192.168.1.9:8080/api/profile/${resourceData.uploadedBy}`);
                             const userData = await userRes.json();
                             return { ...resourceData, uploadedByName: userData.name };
                         }

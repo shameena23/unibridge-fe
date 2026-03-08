@@ -13,7 +13,7 @@ const Topbar = ({ toggleSidebar }) => {
 
         const userId = localStorage.getItem("userId");
 
-        const res = await fetch(`http://localhost:8080/api/profile/${userId}`);
+        const res = await fetch(`http://192.168.1.9:8080/api/profile/${userId}`);
         const data = await res.json();
 
         setUser(data);

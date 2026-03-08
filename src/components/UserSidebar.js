@@ -22,7 +22,7 @@ const UserSidebar = ({ isOpen }) => {
         try {
             const userId = localStorage.getItem("userId");
             if (!userId) return;
-            const response = await fetch(`http://localhost:8080/api/profile/${userId}`);
+            const response = await fetch(`http://192.168.1.9:8080/api/profile/${userId}`);
             const data = await response.json();
             setUser(data);
         } catch (error) {

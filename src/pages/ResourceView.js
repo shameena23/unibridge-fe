@@ -95,7 +95,7 @@ const ResourceViewPage = () => {
     }
     const submitRating = async (ratingValue) => {
         try {
-            const response = await fetch(`http://localhost:8080/api/resources/${id}/rate`, {
+            const response = await fetch(`http://192.168.1.9:8080/api/resources/${id}/rate`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -119,7 +119,7 @@ const ResourceViewPage = () => {
             const userId = localStorage.getItem("userId");
             const resourceId = id; // resource id from your resource card
 
-            const response = await fetch(`http://localhost:8080/api/resources/files/${filePath}`);
+            const response = await fetch(`http://192.168.1.9:8080/api/resources/files/${filePath}`);
             if (!response.ok) throw new Error("Download failed");
 
             const blob = await response.blob();
@@ -138,7 +138,7 @@ const ResourceViewPage = () => {
             window.URL.revokeObjectURL(url);
 
             // 🔹 Save download record in database
-            await fetch("http://localhost:8080/api/download", {
+            await fetch("http://192.168.1.9:8080/api/download", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -259,7 +259,7 @@ const ResourceViewPage = () => {
                                     The document viewer is ready to initialize. For security, files are scanned before rendering.
                                 </p>
                                 <a
-                                    href={`http://localhost:8080/api/resources/files/${filePath}`}
+                                    href={`http://192.168.1.9:8080/api/resources/files/${filePath}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center gap-2 text-[#22D3EE] hover:text-[#06B6D4] font-bold uppercase text-xs tracking-[0.2em] transition-all group"

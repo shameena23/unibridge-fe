@@ -23,7 +23,7 @@ const ResourceCard = ({ resource, onView }) => {
             const userId = localStorage.getItem("userId");
             const resourceId = id; // resource id from your resource card
 
-            const response = await fetch(`http://localhost:8080/api/resources/files/${filePath}`);
+            const response = await fetch(`http://192.168.1.9:8080/api/resources/files/${filePath}`);
             if (!response.ok) throw new Error("Download failed");
 
             const blob = await response.blob();
@@ -41,7 +41,7 @@ const ResourceCard = ({ resource, onView }) => {
             link.parentNode.removeChild(link);
             window.URL.revokeObjectURL(url);
             // 🔹 Save download record in database
-            await fetch("http://localhost:8080/api/download", {
+            await fetch("http://192.168.1.9:8080/api/download", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
